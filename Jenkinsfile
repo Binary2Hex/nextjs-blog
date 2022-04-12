@@ -10,7 +10,7 @@ pipeline {
                 input {
                     message "Which user will use to trigger this build"
                     parameters {
-                        choice(name: 'USERNAME', choices: ['Qin Yue', 'Fei Fei', 'Su Han', description: 'user name'])
+                        choice(name: 'USERNAME', choices: ['Qin Yue', 'Fei Fei', 'Su Han'], description: 'user name')
                     }
                 }
                 echo "User name: ${params.USERNAME}"
