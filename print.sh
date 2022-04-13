@@ -2,4 +2,4 @@
 
 SERVER=$1
 
-echo $SERVER
+echo "AAAA${SERVER}"
