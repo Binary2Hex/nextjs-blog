@@ -4,7 +4,7 @@ pipeline {
     }
     parameters {
         choice choices: ['http://datalake.pok.stglabs.ibm.com', 'http://9.110.71.16:21000'], description: 'Target Atlas Server', name: 'ATLASE_SERVER' 
-        choice choices: ['"Qin Yue"', '"Fei Fei"', '"Su Han"'], description: 'Build User', name: 'USER'
+        choice choices: ['Qin Yue', 'Fei Fei', 'Su Han'], description: 'Build User', name: 'USER'
     }
     stages {
         stage('Test') {
