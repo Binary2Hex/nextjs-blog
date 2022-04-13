@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'echo "Node Test"'
-                sh "./scripts/print.sh ${params.USER}"
+                sh "./print.sh ${params.USER}"
                 // echo "User name 1: ${params.USER}"
                 // echo "User name 2: ${USERNAME}"
             }
