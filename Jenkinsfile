@@ -20,8 +20,8 @@ pipeline {
                 // sh 'node --version'
                 // sh 'echo "Node Test"'
                 // sh "./print.sh ${params.USER}"
-                sh 'ls -l'
-                sh './print.sh'
+                // sh 'ls -l'
+                sh "./print.sh ${params.USER}"
                 // echo "User name 1: ${params.USER}"
                 // echo "User name 2: ${USERNAME}"
             }
