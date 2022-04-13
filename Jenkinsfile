@@ -2,23 +2,25 @@ pipeline {
     agent {
         docker { image 'node:16.13.1-alpine' }
     }
-     parameters {
-                    choice choices: ['"Qin Yue"', '"Fei Fei"', '"Su Han"'], description: 'user name 1', name: 'USER'
-                }
+    parameters {
+        choice choices: ['http://datalake.pok.stglabs.ibm.com', 'http://9.110.71.16:21000'], description: 'Target Atlas Server', name: 'ATLASE_SERVER' 
+        choice choices: ['"Qin Yue"', '"Fei Fei"', '"Su Han"'], description: 'Build User', name: 'USER'
+    }
     stages {
         stage('Test') {
-            input {
-                message 'Which user will use to trigger this build'
-                ok "Yes, sir"
-                parameters {
-                    choice choices: ['"Qin Yue"', '"Fei Fei"', '"Su Han"'], description: 'user name 2', name: 'USERNAME'
-                }
-            }
+            // input {
+            //     message 'Which user will use to trigger this build'
+            //     ok "Yes, sir"
+            //     parameters {
+            //         choice choices: ['"Qin Yue"', '"Fei Fei"', '"Su Han"'], description: 'user name 2', name: 'USERNAME'
+            //     }
+            // }
             steps {
                 sh 'node --version'
                 sh 'echo "Node Test"'
-                echo "User name 1: ${params.USER}"
-                echo "User name 2: ${USERNAME}"
+                sh './scripts/print.sh ${params.USER}'
+                // echo "User name 1: ${params.USER}"
+                // echo "User name 2: ${USERNAME}"
             }
         }
     }
