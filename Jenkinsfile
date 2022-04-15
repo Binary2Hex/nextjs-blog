@@ -6,7 +6,7 @@ pipeline {
     parameters {
         choice choices: ['http://datalake.pok.stglabs.ibm.com', 'http://9.110.71.16:21000'], description: 'Target Atlas Server', name: 'ATLASE_SERVER' 
         choice choices: ['Qin Yue', 'Fei Fei', 'Su Han'], description: 'Build User', name: 'USER'
-        text name: 'PROJECT', defaultValue: 'zPerfDatalake', description: 'The project name for docker-compose to build containers'
+        string name: 'PROJECT', defaultValue: 'zPerfDatalake', description: 'The project name for docker-compose to build containers'
         choice name: 'PORTIDX', choices: [1, 2, 3], description: 'Port index for build'
     }
     stages {
