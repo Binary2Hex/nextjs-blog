@@ -2,4 +2,5 @@
 
 SERVER=$1
 
-echo "AAAA${SERVER}"
+echo "SERVER=${SERVER}"
+echo "PORTN=${PORTN}"
