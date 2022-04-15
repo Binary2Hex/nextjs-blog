@@ -28,6 +28,8 @@ pipeline {
                 // echo "User name 2: ${USERNAME}"
                 sh 'git status'
                 sh "export PORTN=${params.PORTIDX}; ./print.sh"
+                sh 'docker version'
+                sh 'docker-compose version'
             }
         }
     }
